@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>class-02 demo</title>
+
+<style>
+.line {
+  fill: none;
+  stroke: black;
+  stroke-width: 1px;
+}
+rect {
+  fill: none;
+  stroke: black;
+  stroke-width: 1px;
+}
+path.quake, circle.quake {
+  fill: crimson;
+  fill-opacity: 0.4;
+}
+path.counties, path.county-border {
+  fill: none;
+  stroke: #000;
+  stroke-opacity: .2;
+}
+path.state {
+  fill: none;
+  stroke: #000;
+}
+</style>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/topojson.v2.min.js"></script>
+<body>
+<script>
+var width = 960;
+var height = 500;
+var smallest = 2.5; // threshold magnitude
+var data = null; // global variable
+// Set the map projection centered on Oklahoma
+var projection = d3.geoAlbersUsa()
+    .scale(7543)
+    .translate([702, -186]);
+var path = d3.geoPath()
+    .pointRadius(5)
+    .projection(projection);
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+var layer1 = svg.append("g");
+var layer2 = svg.append("g");
+var base = "https://gist.githubusercontent.com/pbogden/935370a5272acff2618b/raw/f4d102d819066bb21a0021b4cbab6502e86bf587/";
+var usgs = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
+// Read and plot the earthquake data
+var url = base + "quakes.json";
+d3.json(url, plotQuakes);
+//d3.json(usgs, plotQuakes);
+// Read and plot the state & county boundaries  
+d3.json(base + "ok.json", plotState);
+function plotQuakes(error, json) {
+  if (error) console.log(error);
+  
+  // Assign the json to a global so we can manipulate it in the console
+  data = json;
+  
+  //count of magnitudes
+  var count = data.metadata['count']
+  console.log("Count:", count);
+  
+  // Filter the small earthquakes
+  var features = data.features.filter(function(d) { return (+ d.properties.mag >= smallest) });
+  console.log("Features with a mag of 2.5 or higher:", features.length);
+  
+  //Find highest magnitude earthquake
+  var max = d3.max(data.features,function(d){return d.properties.mag;})
+  console.log("Highest earthquake magnitude:", max);
+  
+  //Oldest Earthquake and its magnitude
+  value = d3.min(data.features,function(d){return d.properties.time;})
+  data.features.filter(function(d){if(d.properties.time==value)return d.properties.mag;})[0].properties.mag
+  
+  var oldestmag = data.features.filter(function(d){if(d.properties.time==value)return d.properties.mag;})[0].properties.mag
+  console.log("Magnitude of Oldest Earthquake:", oldestmag);
+  console.log(new Date(value));
