@@ -81,3 +81,4 @@ function plotQuakes(error, json) {
   var oldestmag = data.features.filter(function(d){if(d.properties.time==value)return d.properties.mag;})[0].properties.mag
   console.log("Magnitude of Oldest Earthquake:", oldestmag);
   console.log(new Date(value));
+  </script>
