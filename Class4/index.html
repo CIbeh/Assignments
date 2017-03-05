@@ -1,3 +1,43 @@
+<!doctype HTML>
+<meta charset="utf-8">
+<title>class 3</title>
+<style>
+body {
+  position: absolute;
+  margin: 0px;
+}
+svg {
+  background-color: none;
+}
+.info {
+  font-family: sans-serif;
+  color: #000;
+  position: absolute;
+  top: 450px;
+  left: 800px;
+}
+path {
+  fill: #555555;
+  stroke: #aaaaaa;
+}
+path.quake, circle.quake {
+  fill: crimson;
+  fill-opacity: 1;
+}
+path.state {
+  fill: none;
+  stroke: #000;
+}
+.legend rect {
+  fill:white;
+  stroke:black;
+  opacity:0.8;}
+}
+</style>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/topojson.v2.min.js"></script>
+
 <body>
 <script>
 var width = 960, height = 500;
@@ -37,6 +77,10 @@ var features = data.features;
     .enter().append("path")
       .attr("class", "quake")
       .attr("d", path)
+} 
+function mousemoved() {
+  info.text(formatLocation(projection.invert(d3.mouse(this)), projection.scale()));
+}
 } 
 function mousemoved() {
   info.text(formatLocation(projection.invert(d3.mouse(this)), projection.scale()));
