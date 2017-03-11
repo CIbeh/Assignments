@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+body {
+  background-color:black ;
+  font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 15px;
+  text-align: center;
+  color: white;
+}
+p {
+  font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 12px;
+  text-align: center;
+  }
+svg{
+  background-color: lightgrey;
+  font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 15px;
+  
+}
+.info {
+  font-family: sans-serif;
+  color: #000;
+  position: absolute;
+  top: 450px;
+  left: 800px;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: black;
+  shape-rendering: crispEdges;
+}
+
+.dot {
+  stroke: none;
+}
+</style>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+<body>
+<H1> Scatterplot Representation of <br>Quake Magnitudes vs Depth </H1>
+<script>
+
+//Set the dimensions as well as the margins of the scatterplot
+var margin = {top: 20, right: 20, bottom: 40, left: 20},
+    width = 600 - margin.left - margin.right,
+    height = 350 - margin.top - margin.bottom;
+
+//create your scalable vector graphics and append the svg to the body of your webpage
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+	
+//Set the ranges of your data	
+var x = d3.scaleLinear()
+    .range([0, width]);
+var y = d3.scaleLinear()
+    .range([height, 0]);
+
+//create x axis 	
+var xAxis = d3.axisBottom()
+    .scale(x);
+
+//create y axis    
+var yAxis = d3.axisRight()
+    .scale(y);
+	
+//create fill color	
+var color = d3.scaleOrdinal(d3.schemeCategory10);	
+
+//create variable for earthqaue data url  
+var url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_day.csv";
+
+// Get the data
+d3.csv(url, function(error, data) {
+  if (error) throw error;
+  
+// format the data
+  data.forEach(function(d) {
+      d.mag = +d.mag;
+      d.depth = +d.depth;
+	 });  
+x.domain(d3.extent(data, function(d) { return d.mag; }));
+y.domain(d3.extent(data, function(d) { return d.depth; }));
+
+svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+    .append("text")
+      .attr("class", "label")
+      .attr("x", width)
+      .attr("y", 30)
+      .attr("fill", "black")
+      .style("text-anchor", "end")
+      .text("(Magnitude)");
+
+svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("class", "label")
+      .attr("transform", "rotate(-90)")
+      .attr("y", -15)
+      .attr("fill", "black")
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("(Depth)")
+
+//draw dots for your scatterplot	  
+svg.selectAll(".dot")
+      .data(data)
+    .enter().append("circle")
+      .attr("class", "dot")
+      .attr("r", 3.5)
+      .attr("cx", function(d) { return x(d.mag); })
+      .attr("cy", function(d) { return y(d.depth); })
+      .style("fill", function(d) { return color(d.magType); });
+
+//draw legend	  
+var legend = svg.selectAll(".legend")
+      .data(color.domain())
+    .enter().append("g")
+      .attr("class", "legend")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+//add the colored rectangles to be shown in your legend
+  legend.append("rect")
+      .attr("x", width -10)
+      .attr("width", 18)
+      .attr("height", 20)
+      .style("fill", color);
+
+//add legend text
+  legend.append("text")
+      .attr("x", width - 24)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .style("text-anchor", "end")
+      .text(function(d) { return d; });
+
+});
+
+</script>
+<p>
+<br>
+Duration (Md or md), (Mag < 4) (Range: 0 - 400 km). Based on the duration of shaking as measured by the time decay of the amplitude of the seismogram. 
+<br>
+Often used to compute magnitude from seismograms with “clipped” waveforms due to limited dynamic recording range of analog instrumentation, 
+which makes it impossible to measure peak amplitudes.
+<br>                             
+Local (ML Ml, or ml) (Mag: 2 - 7.5) (Range: 0 - 600 km). The original magnitude relationship defined by Richter and Gutenberg for local earthquakes in 1935. <br>
+It is based on the maximum amplitude of a seismogram recorded on a Wood-Anderson torsion seismograph. <br>
+Although these instruments are no longer widely in use, ML values are calculated using modern instrumentation with appropriate adjustments.
+<br>
+Short-period surface wave (mb_Lg, mb_lg, or MLg) (Mag: 3.5 - 7) (Range: 150 – 1100 km). A magnitude for regional earthquakes based on 
+the amplitude of the Lg surface waves as recorded on short-period instruments.
+<br>
+Short-period body wave (mb) (Mag: 4 - 7) (Range: 15 - 100 degrees). Based on the amplitude of P body-waves as recorded on short-period instruments 
+that are most sensitive to waves with a period of about 1 s.
+<br>
+Twenty-second surface wave (Ms or Ms_20) (Mag: 5 - 8.5) (Range: 20 - 160 degrees). A magnitude for distant earthquakes based on the 
+amplitude of Rayleigh surface waves measured at a period near 20 sec.
+Moment (generic notation Mw or mw. Specific types denoted Mwb or mwb, Mwc or mwc, Mwr or mwr, and Mww or mww) (Mag: > 3.5)Based on the scalar 
+seismic-moment of the earthquake, as determined by a moment-tensor inversion. 
+<br>
+Mwb – Mw based on moment tensor inversion of long-period (~10 - 100 s) body-waves (P- and SH). 
+<br>
+Mwc -- Moment magnitude derived from a centroid moment tensor inversion of intermediate- and long-period body- and surface-waves. 
+<br>
+Mwr -- Moment magnitude derived from a moment tensor inversion of complete waveforms at regional distances (less than ~13 degrees). Sometimes called RMT. 
+<br>
+Mww -- Moment magnitude derived from a centroid moment tensor inversion of the W-phase.
+<br>
+Moment (Mi or Mwp) (Mag: 5 - 8) Based on an estimate of moment calculated from the integral of the displacement of the 
+P wave recorded on broadband instruments.
+<br>
+Energy (Me) (Mag: > 3.5) Based on the seismic energy radiated by the earthquake as estimated by integration of digital waveforms.
+<br>
+*Information derived from <a href="https://earthquake.usgs.gov/"> USGS Earthquakes Hazard Program </a> </p>
+  
