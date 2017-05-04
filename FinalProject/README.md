@@ -1,3 +1,5 @@
+PROJECT OBJECTIVE
+
 The purpose of this map is to create a pollution index report for all states within the United 
 States. More precisely, the average daily emission of pollutant carbon monoxide (CO) is mapped 
 in this presentation. 
