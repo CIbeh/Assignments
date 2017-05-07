@@ -1,0 +1,888 @@
+{
+	"type": "FeatureCollection",
+	"features": [{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Alabama",
+				"StateCode": 1,
+				"Lat": 33.485556,
+				"Lon": -86.915000,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 22.567300,
+				"Percentage": 94.099200
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-86.915, 33.485556]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Alaska",
+				"StateCode": 2,
+				"Lat": 61.205861,
+				"Lon": -149.824602,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.593600,
+				"Percentage": 98.335100
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-149.824602, 61.205861]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Arizona",
+				"StateCode": 4,
+				"Lat": 32.047500,
+				"Lon": -112.620700,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.714600,
+				"Percentage": 98.826800
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-112.6207, 32.0475]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Arkansas",
+				"StateCode": 5,
+				"Lat": 34.756189,
+				"Lon": -92.281296,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.843400,
+				"Percentage": 99.355200
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-92.281296, 34.756189]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "California",
+				"StateCode": 6,
+				"Lat": 32.676186,
+				"Lon": -124.201390,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 22.827200,
+				"Percentage": 95.207900
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-124.20139, 32.676186]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Colorado",
+				"StateCode": 8,
+				"Lat": 37.136780,
+				"Lon": -108.561550,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.197700,
+				"Percentage": 96.677700
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-108.56155, 37.13678]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Connecticut",
+				"StateCode": 9,
+				"Lat": 41.170833,
+				"Lon": -73.297257,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.083800,
+				"Percentage": 96.272200
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-73.297257, 41.170833]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Delaware",
+				"StateCode": 10,
+				"Lat": 39.739444,
+				"Lon": -75.558056,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.681100,
+				"Percentage": 98.694500
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-75.558056, 39.739444]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "District Of Columbia",
+				"StateCode": 11,
+				"Lat": 38.894770,
+				"Lon": -77.046389,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.467800,
+				"Percentage": 97.826900
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-77.046389, 38.89477]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Florida",
+				"StateCode": 12,
+				"Lat": 25.622050,
+				"Lon": -84.161111,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.348200,
+				"Percentage": 97.304200
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-84.161111, 25.62205]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Georgia",
+				"StateCode": 13,
+				"Lat": 33.687970,
+				"Lon": -84.391418,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.531400,
+				"Percentage": 98.083900
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-84.391418, 33.68797]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Hawaii",
+				"StateCode": 15,
+				"Lat": 21.307580,
+				"Lon": -158.088613,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 22.401600,
+				"Percentage": 93.402800
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-158.088613, 21.30758]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Idaho",
+				"StateCode": 16,
+				"Lat": 43.593929,
+				"Lon": -116.381250,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.470000,
+				"Percentage": 97.803800
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-116.38125, 43.593929]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Illinois",
+				"StateCode": 17,
+				"Lat": 38.612034,
+				"Lon": -90.160477,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.376100,
+				"Percentage": 97.428100
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-90.160477, 38.612034]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Indiana",
+				"StateCode": 18,
+				"Lat": 37.977647,
+				"Lon": -87.596781,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.214300,
+				"Percentage": 96.778900
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-87.596781, 37.977647]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Iowa",
+				"StateCode": 19,
+				"Lat": 41.530011,
+				"Lon": -93.643118,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 22.447800,
+				"Percentage": 93.652700
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-93.643118, 41.530011]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Kansas",
+				"StateCode": 20,
+				"Lat": 39.117219,
+				"Lon": -94.635605,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.366000,
+				"Percentage": 97.371800
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-94.635605, 39.117219]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Kentucky",
+				"StateCode": 21,
+				"Lat": 37.131790,
+				"Lon": -86.142953,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 22.807600,
+				"Percentage": 95.081700
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-86.142953, 37.13179]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Louisiana",
+				"StateCode": 22,
+				"Lat": 29.996013,
+				"Lon": -91.179220,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.373500,
+				"Percentage": 97.433000
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-91.17922, 29.996013]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Maine",
+				"StateCode": 23,
+				"Lat": 43.660246,
+				"Lon": -70.268965,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.104300,
+				"Percentage": 96.286500
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-70.268965, 43.660246]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Maryland",
+				"StateCode": 24,
+				"Lat": 38.587525,
+				"Lon": -79.012000,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.378600,
+				"Percentage": 97.440400
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-79.012, 38.587525]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Massachusetts",
+				"StateCode": 25,
+				"Lat": 42.108992,
+				"Lon": -72.590803,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 22.712700,
+				"Percentage": 94.739900
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-72.590803, 42.108992]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Michigan",
+				"StateCode": 26,
+				"Lat": 42.228620,
+				"Lon": -85.671339,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.418200,
+				"Percentage": 97.633600
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-85.671339, 42.22862]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Minnesota",
+				"StateCode": 27,
+				"Lat": 44.706123,
+				"Lon": -93.285803,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.281600,
+				"Percentage": 97.029000
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-93.285803, 44.706123]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Mississippi",
+				"StateCode": 28,
+				"Lat": 32.329111,
+				"Lon": -90.182722,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.196700,
+				"Percentage": 96.739500
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-90.182722, 32.329111]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Missouri",
+				"StateCode": 29,
+				"Lat": 38.631140,
+				"Lon": -94.450513,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.405800,
+				"Percentage": 97.573300
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-94.450513, 38.63114]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Montana",
+				"StateCode": 30,
+				"Lat": 44.657014,
+				"Lon": -111.987164,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 22.724900,
+				"Percentage": 94.807500
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-111.987164, 44.657014]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Nebraska",
+				"StateCode": 31,
+				"Lat": 41.247486,
+				"Lon": -96.028628,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.757400,
+				"Percentage": 99.008300
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-96.028628, 41.247486]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Nevada",
+				"StateCode": 32,
+				"Lat": 36.141895,
+				"Lon": -119.840025,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.555700,
+				"Percentage": 98.170300
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-119.840025, 36.141895]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "New Hampshire",
+				"StateCode": 33,
+				"Lat": 42.861750,
+				"Lon": -71.878389,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.366700,
+				"Percentage": 97.385200
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-71.878389, 42.86175]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "New Jersey",
+				"StateCode": 34,
+				"Lat": 39.934446,
+				"Lon": -75.125291,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.574400,
+				"Percentage": 98.261100
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-75.125291, 39.934446]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "New Mexico",
+				"StateCode": 35,
+				"Lat": 35.017080,
+				"Lon": -106.657390,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 22.613700,
+				"Percentage": 94.257500
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-106.65739, 35.01708]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "New York",
+				"StateCode": 36,
+				"Lat": 40.736140,
+				"Lon": -78.809526,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.313900,
+				"Percentage": 97.164100
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-78.809526, 40.73614]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "North Carolina",
+				"StateCode": 37,
+				"Lat": 35.240100,
+				"Lon": -80.785683,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 22.720900,
+				"Percentage": 94.745600
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-80.785683, 35.2401]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "North Dakota",
+				"StateCode": 38,
+				"Lat": 46.825425,
+				"Lon": -100.768210,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.571700,
+				"Percentage": 98.229100
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-100.76821, 46.825425]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Ohio",
+				"StateCode": 39,
+				"Lat": 39.128860,
+				"Lon": -84.720490,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.473800,
+				"Percentage": 97.843700
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-84.72049, 39.12886]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Oklahoma",
+				"StateCode": 40,
+				"Lat": 35.503070,
+				"Lon": -97.577981,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.491600,
+				"Percentage": 97.908400
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-97.577981, 35.50307]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Oregon",
+				"StateCode": 41,
+				"Lat": 45.393497,
+				"Lon": -122.747894,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.583700,
+				"Percentage": 98.275600
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-122.747894, 45.393497]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Pennsylvania",
+				"StateCode": 42,
+				"Lat": 39.920020,
+				"Lon": -80.038611,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.344400,
+				"Percentage": 97.323000
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-80.038611, 39.92002]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Puerto Rico",
+				"StateCode": 72,
+				"Lat": 18.009558,
+				"Lon": -66.627249,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 22.927600,
+				"Percentage": 95.569600
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-66.627249, 18.009558]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Rhode Island",
+				"StateCode": 44,
+				"Lat": 41.829495,
+				"Lon": -71.417457,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 22.987500,
+				"Percentage": 95.834000
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-71.417457, 41.829495]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "South Carolina",
+				"StateCode": 45,
+				"Lat": 34.093959,
+				"Lon": -80.962304,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.411000,
+				"Percentage": 97.559600
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-80.962304, 34.093959]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "South Dakota",
+				"StateCode": 46,
+				"Lat": 43.547920,
+				"Lon": -96.700769,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.754100,
+				"Percentage": 98.996400
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-96.700769, 43.54792]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Tennessee",
+				"StateCode": 47,
+				"Lat": 35.151194,
+				"Lon": -90.041559,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.141200,
+				"Percentage": 96.479900
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-90.041559, 35.151194]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Texas",
+				"StateCode": 48,
+				"Lat": 25.892518,
+				"Lon": -106.547300,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.416900,
+				"Percentage": 97.595000
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-106.5473, 25.892518]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Utah",
+				"StateCode": 49,
+				"Lat": 40.253611,
+				"Lon": -111.975524,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.624000,
+				"Percentage": 98.441300
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-111.975524, 40.253611]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Vermont",
+				"StateCode": 50,
+				"Lat": 43.608056,
+				"Lon": -73.210600,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 22.972600,
+				"Percentage": 95.797300
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-73.2106, 43.608056]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Virginia",
+				"StateCode": 51,
+				"Lat": 36.855550,
+				"Lon": -79.884520,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.258200,
+				"Percentage": 96.951800
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-79.88452, 36.85555]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Washington",
+				"StateCode": 53,
+				"Lat": 47.568236,
+				"Lon": -124.624910,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 22.618700,
+				"Percentage": 94.301200
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-124.62491, 47.568236]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "West Virginia",
+				"StateCode": 54,
+				"Lat": 38.346258,
+				"Lon": -81.621161,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.396500,
+				"Percentage": 97.500000
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-81.621161, 38.346258]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Wisconsin",
+				"StateCode": 55,
+				"Lat": 42.932570,
+				"Lon": -88.621111,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 23.395300,
+				"Percentage": 97.531600
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-88.621111, 42.93257]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"StateName": "Wyoming",
+				"StateCode": 56,
+				"Lat": 41.182227,
+				"Lon": -110.830833,
+				"Param": "Carbon monoxide",
+				"Unit": "Parts per million",
+				"Count": 21.009900,
+				"Percentage": 87.640900
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-110.830833, 41.182227]
+			}
+		}
+	]
+}

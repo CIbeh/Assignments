@@ -1,0 +1,53 @@
+StateName,StateCode,Lat,Lon,Param,Unit,Count,Percentage
+Alabama,1,33.48555600000,-86.91500000000,Carbon monoxide,Parts per million,22.5673,94.0992
+Alaska,2,61.20586100000,-149.82460200000,Carbon monoxide,Parts per million,23.5936,98.3351
+Arizona,4,32.04750000000,-112.62070000000,Carbon monoxide,Parts per million,23.7146,98.8268
+Arkansas,5,34.75618900000,-92.28129600000,Carbon monoxide,Parts per million,23.8434,99.3552
+California,6,32.67618600000,-124.20139000000,Carbon monoxide,Parts per million,22.8272,95.2079
+Colorado,8,37.13678000000,-108.56155000000,Carbon monoxide,Parts per million,23.1977,96.6777
+Connecticut,9,41.17083300000,-73.29725700000,Carbon monoxide,Parts per million,23.0838,96.2722
+Delaware,10,39.73944400000,-75.55805600000,Carbon monoxide,Parts per million,23.6811,98.6945
+District Of Columbia,11,38.89477000000,-77.04638900000,Carbon monoxide,Parts per million,23.4678,97.8269
+Florida,12,25.62205000000,-84.16111100000,Carbon monoxide,Parts per million,23.3482,97.3042
+Georgia,13,33.68797000000,-84.39141800000,Carbon monoxide,Parts per million,23.5314,98.0839
+Hawaii,15,21.30758000000,-158.08861300000,Carbon monoxide,Parts per million,22.4016,93.4028
+Idaho,16,43.59392900000,-116.38125000000,Carbon monoxide,Parts per million,23.4700,97.8038
+Illinois,17,38.61203400000,-90.16047700000,Carbon monoxide,Parts per million,23.3761,97.4281
+Indiana,18,37.97764700000,-87.59678100000,Carbon monoxide,Parts per million,23.2143,96.7789
+Iowa,19,41.53001100000,-93.64311800000,Carbon monoxide,Parts per million,22.4478,93.6527
+Kansas,20,39.11721900000,-94.63560500000,Carbon monoxide,Parts per million,23.3660,97.3718
+Kentucky,21,37.13179000000,-86.14295300000,Carbon monoxide,Parts per million,22.8076,95.0817
+Louisiana,22,29.99601300000,-91.17922000000,Carbon monoxide,Parts per million,23.3735,97.4330
+Maine,23,43.66024600000,-70.26896500000,Carbon monoxide,Parts per million,23.1043,96.2865
+Maryland,24,38.58752500000,-79.01200000000,Carbon monoxide,Parts per million,23.3786,97.4404
+Massachusetts,25,42.10899200000,-72.59080300000,Carbon monoxide,Parts per million,22.7127,94.7399
+Michigan,26,42.22862000000,-85.67133900000,Carbon monoxide,Parts per million,23.4182,97.6336
+Minnesota,27,44.70612300000,-93.28580300000,Carbon monoxide,Parts per million,23.2816,97.0290
+Mississippi,28,32.32911100000,-90.18272200000,Carbon monoxide,Parts per million,23.1967,96.7395
+Missouri,29,38.63114000000,-94.45051300000,Carbon monoxide,Parts per million,23.4058,97.5733
+Montana,30,44.65701400000,-111.98716400000,Carbon monoxide,Parts per million,22.7249,94.8075
+Nebraska,31,41.24748600000,-96.02862800000,Carbon monoxide,Parts per million,23.7574,99.0083
+Nevada,32,36.14189500000,-119.84002500000,Carbon monoxide,Parts per million,23.5557,98.1703
+New Hampshire,33,42.86175000000,-71.87838900000,Carbon monoxide,Parts per million,23.3667,97.3852
+New Jersey,34,39.93444600000,-75.12529100000,Carbon monoxide,Parts per million,23.5744,98.2611
+New Mexico,35,35.01708000000,-106.65739000000,Carbon monoxide,Parts per million,22.6137,94.2575
+New York,36,40.73614000000,-78.80952600000,Carbon monoxide,Parts per million,23.3139,97.1641
+North Carolina,37,35.24010000000,-80.78568300000,Carbon monoxide,Parts per million,22.7209,94.7456
+North Dakota,38,46.82542500000,-100.76821000000,Carbon monoxide,Parts per million,23.5717,98.2291
+Ohio,39,39.12886000000,-84.72049000000,Carbon monoxide,Parts per million,23.4738,97.8437
+Oklahoma,40,35.50307000000,-97.57798100000,Carbon monoxide,Parts per million,23.4916,97.9084
+Oregon,41,45.39349700000,-122.74789400000,Carbon monoxide,Parts per million,23.5837,98.2756
+Pennsylvania,42,39.92002000000,-80.03861100000,Carbon monoxide,Parts per million,23.3444,97.3230
+Puerto Rico,72,18.00955800000,-66.62724900000,Carbon monoxide,Parts per million,22.9276,95.5696
+Rhode Island,44,41.82949500000,-71.41745700000,Carbon monoxide,Parts per million,22.9875,95.8340
+South Carolina,45,34.09395900000,-80.96230400000,Carbon monoxide,Parts per million,23.4110,97.5596
+South Dakota,46,43.54792000000,-96.70076900000,Carbon monoxide,Parts per million,23.7541,98.9964
+Tennessee,47,35.15119400000,-90.04155900000,Carbon monoxide,Parts per million,23.1412,96.4799
+Texas,48,25.89251800000,-106.54730000000,Carbon monoxide,Parts per million,23.4169,97.5950
+Utah,49,40.25361100000,-111.97552400000,Carbon monoxide,Parts per million,23.6240,98.4413
+Vermont,50,43.60805600000,-73.21060000000,Carbon monoxide,Parts per million,22.9726,95.7973
+Virginia,51,36.85555000000,-79.88452000000,Carbon monoxide,Parts per million,23.2582,96.9518
+Washington,53,47.56823600000,-124.62491000000,Carbon monoxide,Parts per million,22.6187,94.3012
+West Virginia,54,38.34625800000,-81.62116100000,Carbon monoxide,Parts per million,23.3965,97.5000
+Wisconsin,55,42.93257000000,-88.62111100000,Carbon monoxide,Parts per million,23.3953,97.5316
+Wyoming,56,41.18222700000,-110.83083300000,Carbon monoxide,Parts per million,21.0099,87.6409
