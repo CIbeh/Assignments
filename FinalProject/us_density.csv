@@ -1,0 +1,53 @@
+id,name,density
+01,Alabama,94.65
+02,Alaska,1.264
+04,Arizona,57.05
+05,Arkansas,56.43
+06,California,241.7
+08,Colorado,49.33
+09,Connecticut,739.1
+10,Delaware,464.3
+11,District of Columbia,10065
+12,Florida,353.4
+13,Georgia,169.5
+15,Hawaii,214.1
+16,Idaho,19.15
+17,Illinois,231.5
+18,Indiana,181.7
+19,Iowa,54.81
+20,Kansas,35.09
+21,Kentucky,110
+22,Louisiana,105
+23,Maine,43.04
+24,Maryland,596.3
+25,Massachusetts,840.2
+26,Michigan,173.9
+27,Minnesota,67.14
+28,Mississippi,63.5
+29,Missouri,87.26
+30,Montana,6.858
+31,Nebraska,23.97
+32,Nevada,24.8
+33,New Hampshire,147
+34,New Jersey,1189
+35,New Mexico,17.16
+36,New York,412.3
+37,North Carolina,198.2
+38,North Dakota,9.916
+39,Ohio,281.9
+40,Oklahoma,55.22
+41,Oregon,40.33
+42,Pennsylvania,284.3
+44,Rhode Island,1006
+45,South Carolina,155.4
+46,South Dakota,98.07
+47,Tennessee,88.08
+48,Texas,98.07
+49,Utah,34.3
+50,Vermont,67.73
+51,Virginia,204.5
+53,Washington,102.6
+54,West Virginia,77.06
+55,Wisconsin,105.2
+56,Wyoming,5.851
+72,Puerto Rico,1082
