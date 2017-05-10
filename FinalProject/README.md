@@ -7,7 +7,7 @@ Project repository: https://github.com/cibeh/class/tree/master/FinalProject.
 
 Data derived from: https://www.epa.gov/outdoor-air-quality-data/download-daily-data.
 
-*Data has been summarized and filtered to match the specification of this presentation.
+*Data has been summarized and filtered to match the specification of this presentation.*
 
 ## API Referenced
 Basic D3 Library: "https://d3js.org/d3.v4.min.js".
