@@ -1,39 +1,20 @@
-## Project
+## Mapping CO Emission across the US
 
-The purpose of this map is to create a pollution index report for all states within the United States. More precisely, the average daily emission of pollutant carbon monoxide (CO) is mapped in this presentation.
+The purpose of this map is to create a pollution index report for all states within the United States. More precisely, map the average daily emission of pollutant carbon monoxide (CO) against the population density of states in the US to visualize any relationship between population density and carbon monoxide emission.
 
-### Data
-
+## Data
 Project repository: https://github.com/cibeh/class/tree/master/FinalProject
-
 Data derived from: https://www.epa.gov/outdoor-air-quality-data/download-daily-data
+*Data has been summarized and filtered to match the specification of this presentation.
 
-Data has been summarized and filtered to match the specification of this presentation.
+## API Referenced
+Basic D3 Library: "https://d3js.org/d3.v4.min.js"
+TopoJSON Library: "https://d3js.org/topojson.v2.min.js"
+Customized D3.Legend Library by *Susie Lu*: "https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.21.0/d3-legend.js"
 
-### Instructional demo
+#Demo
+HTML: https://cibeh.github.io/class/FinalProject/index.html
 
-This demo, based on the [class 5 demo](https://umbcvis.github.io/classes/class-05), shows how to plot the GeoJSON data from the project repo.
-
-*  https://umbcvis.github.io/projects/cibeh/
-
-## To Do
-
-Next steps for the project....
-
-#### Documentation
-
-Add the following content to the README.md in your repo.
-
-1. 1 or 2 sentences describing overall project goals, e.g., interactive tool?, hypothesis test? (0% complete)
-2. Attribution and links to all data sources (0% complete)
-    * describe parameters used in API query to get data (as appropriate)
-3. Extremely brief description of all pre-processing, if any (0% complete)
-
-#### Technical
-
-For each step, create a separate gist/block -- link to these in your repo's README.md
-
-1. Basic map of data 
-2. TBD
-3. TBD
-
+#Code
+File: https://github.com/cibeh/class/blob/master/FinalProject/index.html
+Gist: 
