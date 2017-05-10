@@ -1,14 +1,47 @@
-<!doctype HTML>
+<!DOCTYPE html>
 <meta charset="utf-8">
-<title> Mapping CO Emission across the United States </title>
+<title> Mapping Average CO Emission in the U.S</title>
+
 <style>
-body {
+html, body{
   position: absolute;
-  margin: 0px;
+  text-align: center;
+  font-family: "Goudy Old Style",Garamond,"Big Caslon","Times New Roman",serif;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%; 
 }
-svg {
-  background-color: none;
+
+ .axis path,.axis line{
+  fill: none;
+  stroke: black;
+  shape-rendering: crispEdges;
 }
+ 
+#area1, #area2, #area3{
+font-family: "Goudy Old Style",Garamond,"Big Caslon","Times New Roman",serif;
+}
+
+text, H1, H2, #text-contain1, #text-contain2{
+font-family: "Book Antiqua",Palatino,"Palatino Linotype","Palatino LT STD",Georgia,serif;
+}
+
+.line{
+  fill: none;
+  stroke: black;
+  stroke-width: 1px;
+}
+
+header, footer {
+    font-family: Copperplate,"Copperplate Gothic Light",fantasy;
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}  
+
 .info {
   font-family: sans-serif;
   color: #000;
@@ -16,57 +49,599 @@ svg {
   top: 450px;
   left: 800px;
 }
-path {
-  fill: #555555;
-  stroke: #aaaaaa;
+
+.tooltip1,.tooltip2,.tooltip3 {
+  position: absolute;
+  font-family: "Book Antiqua",Palatino,"Palatino Linotype","Palatino LT STD",Georgia,serif;
+  font-size: 12px;
+  text-align: center;
+  width: 220px;
+  height:50px;
+  padding: 2px;
+  background: pink;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
 }
-path.quake, circle.quake {
-  fill: crimson;
+path{
+  fill: black;
+  stroke: white;
+  max-width: 99%;
+  max-height: 99
+}
+path.density1 {
+  fill: #ffb84d;
   fill-opacity: 1;
 }
-path.state {
-  fill: none;
-  stroke: #000;
+path.density2{
+  fill:  #cc7a00;
+  fill-opacity: 1;
 }
+path.density3{
+  fill: #b36b00;
+  fill-opacity: 1;
+} 
+path.density4{
+  fill: #995c00;
+  fill-opacity: 1;   
+}
+path.density5{
+  fill: #804d00;
+  fill-opacity: 1; 
+  }    
+path.density6{
+  fill:  #663d00;
+  fill-opacity: 1;
+  }
+path.emission1 {
+  fill: #ccffcc;
+  fill-opacity: 1;
+  stroke: none;
+}
+path.emission2{
+  fill:  #80ff80;
+  fill-opacity: 1;
+  stroke: none;
+}
+path.emission3{
+  fill: #1aff1a;
+  fill-opacity: 1;
+  stroke: none;
+} 
+path.emission4{
+  fill: #00e600;
+  fill-opacity: 1;
+  stroke: none;
+}
+path.emission5{
+  fill: #009900;
+  fill-opacity: 1;
+  stroke: none;
+}    
+path.emission6{
+  fill: #004d00;
+  fill-opacity: 1;
+  stroke: none;
+}
+.legend rect {
+  fill:white;
+  stroke:black;
+  opacity:0.8;}
+}
+.legend2 rect {
+  fill:white;
+  stroke:black;
+  opacity:0.8;}
 }
 </style>
+<body> 
+<div class="container">
+<header>
+   <h1>Visualization of Average Carbon Emission and Population Density in the US</h1>
+</header>
+</div>
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://d3js.org/topojson.v2.min.js"></script>
-
-<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.21.0/d3-legend.js"></script>
+ 
+<div id="area1" style = "text-align: center;">
 <script>
-var width = 960, height = 500;
-var data = null; // This is a global variable
-var usgs_data; // This is a global variable
-var svg = d3.select("body").append("svg")
+
+//Create variables for height and width
+var width = 1200;
+var height = 550;
+
+// Set the map projection centered on the 
+var projection = d3.geoAlbersUsa()
+    .scale(1000);
+		
+var path = d3.geoPath()
+    .pointRadius(5)
+    .projection(projection);
+
+//Create and add a "sub-div" to your area1 div. This will be the div that holds the mouseover tooltip 
+var div1 = d3.select("#area1").append("div")
+    .attr("class", "tooltip1")
+    .style("opacity", 0);
+
+//Append svg to the area1 div
+var svg = d3.select("#area1").append("svg")
     .attr("width", width)
     .attr("height", height);
-var projection = d3.geoAlbersUsa();
-var path = d3.geoPath()
-    .projection(projection);
 	
+//Create layers to plot US States AND apply symbology
 var layer1 = svg.append("g");
 var layer2 = svg.append("g");
-var url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_day.geojson";
-var base = "https://umbcvis.github.io/classes/class-03/us.json"
-d3.json(base, plotStates);
-function plotStates(error, json) {
-  if (error) console.log(error);
+var layer3 = svg.append("g");
+var layer4 = svg.append("g");  
+var layer5 = svg.append("g");  
+var layer6 = svg.append("g"); 
+
+//Create layers to plot pollution data AND apply symbology
+var layer7 = svg.append("g");
+var layer8 = svg.append("g");
+var layer9 = svg.append("g");
+var layer10 = svg.append("g");  
+var layer11= svg.append("g"); 
+var layer12= svg.append("g"); 
   
-  // Assign the json to a global so we can manipulate it in the console
-  usgs_data = json.objects.us.geometries.map(function(d) { return topojson.feature(json, d); })
-  // Plot the States
-  layer2.selectAll("path.state")
-      .data(usgs_data)
+//Create States variable  
+var states = "https://cibeh.github.io/class/FinalProject/us_states_pop_density.json";
+
+//Create Pollution variable
+var pollutiongeo = "https://cibeh.github.io/class/FinalProject/pollution_geo_update.json";
+
+//Create Legend for CO Emission
+var ordinal = d3.scaleOrdinal()
+  .domain(["21.0 - 21.5", "21.5 - 22.0", "22.0 - 22.5", "22.5 - 23.0", "23.0 - 23.5", "23.5 - 24.0"])
+  .range(["rgb(204, 255, 204)", "rgb(128, 255, 128)", "rgb(26, 255, 26)", "rgb(0, 230, 0)", "rgb(0, 153, 0)", "rgb(0, 77, 0)"]);
+var legend = d3.select("svg").append("svg")
+  .attr("x", 900)
+  .attr("y", 50);  
+legend.append("g")
+  .attr("class", "legendOrdinal")
+  .attr("transform", "translate(20,20)")
+var legendOrdinal = d3.legendColor()
+  .shape("path", d3.symbol().type(d3.symbolCircle).size(150)())
+  .shapePadding(10)
+  .title("CO Emission in the US")
+  .scale(ordinal);
+svg.select(".legendOrdinal")
+  .call(legendOrdinal);  
+  
+//Create Legend for Population Density
+var ordinal2 = d3.scaleOrdinal()
+  .domain(["0 - 75", "75 - 150", "150 - 300", "300 - 450", "450 - 600", "> 600"])
+  .range(["rgb(255, 184, 77)", "rgb(204, 122, 0)", "rgb(179, 107, 0)", "rgb(153, 92, 0)", "rgb(128, 77, 0)", "rgb(102, 61, 0)"]);
+var legend2 = d3.select("svg").append("svg")
+  .attr("x", 900)
+  .attr("y", 270); 
+legend2.append("g")
+  .attr("class", "legendOrdinal2")
+  .attr("transform", "translate(20,20)")
+var legendOrdinal2 = d3.legendColor()
+  .shape("path", d3.symbol().type(d3.symbolSquare).size(150)())
+  .shapePadding(10)
+  .title("Population Density of US States")
+  .scale(ordinal2);
+svg.select(".legendOrdinal2")
+  .call(legendOrdinal2);    
+
+//Read and plot the State boundaries  
+d3.json(states, plotState);
+function plotState(error, us) {
+  if (error) console.log(error);
+
+//Create a variable for the features within the map
+var all = us.features;
+
+//Calculate the maximum population density and identify the corresponding state
+var max = d3.max(all,function(d){return d.properties.density;})
+var mostpopdensstate = all.filter(function(d){if(d.properties.density==max)return d.properties.name;})[0].properties.name
+  console.log("State with Highest Population Density:", mostpopdensstate)
+  console.log("Highest Population Density:", max);
+ 
+//Create a range class for the population
+var density1 = all.filter(function(d) { return (+ d.properties.density <=75.0) });
+var density2 = all.filter(function(d) { return (+ d.properties.density >75.0) && (+ d.properties.density <=150.0) });
+var density3 = all.filter(function(d) { return (+ d.properties.density >150.0) && (+ d.properties.density <=300.0) });
+var density4 = all.filter(function(d) { return (+ d.properties.density >300.0) && (+ d.properties.density <=450.0) });  
+var density5 = all.filter(function(d) { return (+ d.properties.density >450.0) && (+ d.properties.density <=600.0) });
+var density6 = all.filter(function(d) { return (+ d.properties.density >600.0) });
+
+//Calculate the count for each density range created
+var density1count = density1.length;
+var density2count = density2.length;
+var density3count = density3.length;
+var density4count = density4.length; 
+var density5count = density5.length;
+var density6count = density6.length;
+
+//Display results in console
+console.log("Range 1:", density1count); 
+console.log("Range 2:",density2count); 
+console.log("Range 3:",density3count); 
+console.log("Range 4:",density4count); 
+console.log("Range 5:",density5count);   
+console.log("Range 6:",density6count);     
+  
+//Append each density range to its own layer   
+layer1.selectAll("path.density1")
+      .data(density1)
+  .enter().append ("path")
+      .attr("class", "density1")
+      .attr("d", path)
+layer2.selectAll("path.density2")
+      .data(density2)
     .enter().append("path")
-      .attr("class", "state")
+      .attr("class", "density2")
+      .attr("d", path)
+layer3.selectAll("path.density3")
+      .data(density3)
+    .enter().append("path")
+      .attr("class", "density3")
+      .attr("d", path)
+layer4.selectAll("path.density4")
+      .data(density4)
+    .enter().append("path")
+      .attr("class", "density4")
+      .attr("d", path)
+layer5.selectAll("path.density5")
+      .data(density5)
+    .enter().append("path")
+      .attr("class", "density5")
+      .attr("d", path)
+layer6.selectAll("path.density6")
+      .data(density6)
+    .enter().append("path")
+      .attr("class", "density6")
       .attr("d", path)
 }
 
+//Plot the CO emission  
+d3.json(pollutiongeo,plotCarbon);
+function plotCarbon(error, json) {
+  if (error) console.log(error);  
+var all2 = json.features;
 
-function mousemoved() {
-  info.text(formatLocation(projection.invert(d3.mouse(this)), projection.scale()));
+//Create a range class for the pollution data
+var emission1 = all2.filter(function(d) { return (+ d.properties.Count >21.0) && (+ d.properties.Count <=21.5) });
+var emission2 = all2.filter(function(d) { return (+ d.properties.Count >21.5) && (+ d.properties.Count <=22.0) });
+var emission3 = all2.filter(function(d) { return (+ d.properties.Count >22.0) && (+ d.properties.Count <=22.5) });  
+var emission4 = all2.filter(function(d) { return (+ d.properties.Count >22.5) && (+ d.properties.Count <=23.0) });
+var emission5 = all2.filter(function(d) { return (+ d.properties.Count >23.0) && (+ d.properties.Count <=23.5) });
+var emission6 = all2.filter(function(d) { return (+ d.properties.Count >23.5) && (+ d.properties.Count <=24.0) });
+
+//Calculate the count for each range
+var emission1count = emission1.length;
+var emission2count = emission2.length;
+var emission3count = emission3.length;
+var emission4count = emission4.length; 
+var emission5count = emission5.length;
+var emission6count = emission6.length;
+
+//Display results in console
+console.log("emission 1:",emission1count); 
+console.log("emission 2:",emission2count); 
+console.log("emission 3:",emission3count); 
+console.log("emission 4:",emission4count); 
+console.log("emission 5:",emission5count);   
+console.log("emission 6:",emission6count); 
+  
+//Append all emission to individual layers and add mouseover functions
+layer7.selectAll("path.emission1")
+      .data(emission1)
+  .enter().append ("path")
+      .attr("class", "emission1")
+      .attr("d", path)
+	  .on("mouseover", function(d) {
+       div1.transition()
+         .duration(200)
+         .style("opacity", .9);
+       div1.html(d.properties.StateName + "<br/>" + d.properties.Count)
+         .style("left", (d3.event.pageX) + "px")
+         .style("top", (d3.event.pageY - 28) + "px");
+       })
+     .on("mouseout", function(d) {
+       div1.transition()
+         .duration(500)
+         .style("opacity", 0);
+       });
+layer8.selectAll("path.emission2")
+      .data(emission2)
+    .enter().append("path")
+      .attr("class", "emission2")
+      .attr("d", path)
+	  .on("mouseover", function(d) {
+       div1.transition()
+         .duration(200)
+         .style("opacity", .9);
+       div1.html(d.properties.StateName + "<br/>" + d.properties.Count)
+         .style("left", (d3.event.pageX) + "px")
+         .style("top", (d3.event.pageY - 28) + "px");
+       })
+     .on("mouseout", function(d) {
+       div1.transition()
+         .duration(500)
+         .style("opacity", 0);
+       });
+layer9.selectAll("path.emission3")
+      .data(emission3)
+    .enter().append("path")
+      .attr("class", "emission3")
+      .attr("d", path)
+	  .on("mouseover", function(d) {
+       div1.transition()
+         .duration(200)
+         .style("opacity", .9);
+       div1.html(d.properties.StateName + "<br/>" + d.properties.Count)
+         .style("left", (d3.event.pageX) + "px")
+         .style("top", (d3.event.pageY - 28) + "px");
+       })
+     .on("mouseout", function(d) {
+       div1.transition()
+         .duration(500)
+         .style("opacity", 0);
+       });
+layer10.selectAll("path.emission4")
+      .data(emission4)
+    .enter().append("path")
+      .attr("class", "emission4")
+      .attr("d", path)
+	  .on("mouseover", function(d) {
+       div1.transition()
+         .duration(200)
+         .style("opacity", .9);
+       div1.html(d.properties.StateName + "<br/>" + d.properties.Count)
+         .style("left", (d3.event.pageX) + "px")
+         .style("top", (d3.event.pageY - 28) + "px");
+       })
+     .on("mouseout", function(d) {
+       div1.transition()
+         .duration(500)
+         .style("opacity", 0);
+       });
+layer11.selectAll("path.emission5")
+      .data(emission5)
+    .enter().append("path")
+      .attr("class", "emission5")
+      .attr("d", path)
+	  .on("mouseover", function(d) {
+       div1.transition()
+         .duration(200)
+         .style("opacity", .9);
+       div1.html(d.properties.StateName + "<br/>" + d.properties.Count)
+         .style("left", (d3.event.pageX) + "px")
+         .style("top", (d3.event.pageY - 28) + "px");
+       })
+     .on("mouseout", function(d) {
+       div1.transition()
+         .duration(500)
+         .style("opacity", 0);
+       });
+layer12.selectAll("path.emission6")
+      .data(emission6)
+    .enter().append("path")
+      .attr("class", "emission6")
+      .attr("d", path)
+	  .on("mouseover", function(d) {
+       div1.transition()
+         .duration(200)
+         .style("opacity", .9);
+       div1.html(d.properties.StateName + "<br/>" + d.properties.Count)
+         .style("left", (d3.event.pageX) + "px")
+         .style("top", (d3.event.pageY - 28) + "px");
+       })
+     .on("mouseout", function(d) {
+       div1.transition()
+         .duration(500)
+         .style("opacity", 0);
+       });
 }
 </script>
-<body>
+</div>
+<H1> Bar Chart Representation of Data </H1>
+<div id= "text-contain1">
+<b> Bar Chart of Average Daily Carbon Emission(ppm) in the US <b>
+</div>
+<div id ="area2" style = "text-align: center;">
+<script>
+// set the dimensions and margins of the graph
+var margin = {top: 50, right: 20, bottom: 200, left: 40},
+    width = 1000 - margin.left - margin.right,
+    height = 700 - margin.top - margin.bottom;
+
+// set the ranges
+var x = d3.scaleBand()
+          .range([0, width])
+          .padding(0.1);
+var y = d3.scaleLinear()
+          .range([height, 0])
+
+//create x axis		  
+var xAxis = d3.axisBottom()
+    .scale(x);
+//create y axis    
+var yAxis = d3.axisLeft()
+    .scale(y);		  
+		  		  
+// append the svg object to the body of the page
+// append a 'group' element to 'svg'
+// moves the 'group' element to the top left margin
+var svg2 = d3.select("#area2").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + 50)
+  .append("g")
+    .attr("transform", 
+          "translate(" + margin.left + "," + margin.top + ")");
+var div2 = d3.select("#area2").append("div")
+    .attr("class", "tooltip2")
+    .style("opacity", 0);
+
+var csv = "https://cibeh.github.io/class/FinalProject/EPA_Data.csv";		  
+		  
+// get the data
+d3.csv(csv, function(error, data) {
+  if (error) throw error;
+
+  // format the data
+  data.forEach(function(d) {
+    d.Count = +d.Count;
+  });
+
+  // Scale the range of the data in the domains
+  x.domain(data.map(function(d) { return d.StateName; }));
+  y.domain([0, d3.max(data, function(d) { return d.Count; })]);
+
+  svg2.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+    .selectAll("text")
+      .attr("class", "label")
+      .attr("dx", "-.8em")
+      .attr("dy", "-.55em")
+      .attr("transform", "rotate(-90)" )
+      .attr("fill", "black")
+      .style("text-anchor", "end");
+
+ svg2.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("class", "label")
+      .attr("transform", "rotate(-90)")
+      .attr("y", -35)
+      .attr("fill", "black")
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("(PPM)");
+
+  svg2.selectAll(".bar")
+      .data(data)
+    .enter().append("rect")
+	  .attr("class", "bar")
+      .style("fill", "#4ce600")
+      .attr("x", function(d) { return x(d.StateName); })
+      .attr("width", x.bandwidth())
+      .attr("y", function(d) { return y(d.Count); })
+      .attr("height", function(d) { return height - y(d.Count); })
+      .on("mouseover", function(d) {
+        div2.transition()
+         .duration(200)
+         .style("opacity", .9);
+        div2.html("State:"+ " " +d.StateName + "<br/>" + "Average Carbon Emission:"+" "+ d.Count + " " +"ppm")
+         .style("left", (d3.event.pageX) + "px")
+         .style("top", (d3.event.pageY - 5) + "px");
+        })
+      .on("mouseout", function(d) {
+        div2.transition()
+         .duration(500)
+         .style("opacity", 0);
+       });
+});
+</script>
+</div>
+<div id= "text-contain2">
+<b> Bar Chart of US State Population Densities <b>
+</div>
+<div id ="area3" style = "text-align: center;">
+<script>
+// set the dimensions and margins of the graph
+var margin2 = {top: 50, right: 20, bottom: 400, left: 40},
+    width = 1000 - margin2.left - margin2.right,
+    height = 800 - margin2.top - margin2.bottom;
+
+// set the ranges
+var x = d3.scaleBand()
+          .range([0, width])
+          .padding(0.1);
+var y = d3.scaleLinear()
+          .range([height, 0])
+
+//create x axis		  
+var xAxis = d3.axisBottom()
+    .scale(x);
+//create y axis    
+var yAxis = d3.axisLeft()
+    .scale(y);		  
+var div3 = d3.select("#area3").append("div")
+    .attr("class", "tooltip3")
+    .style("opacity", 0);		  
+
+// append the svg object to the body of the page
+// append a 'group' element to 'svg'
+// moves the 'group' element to the top left margin
+var svg3 = d3.select("#area3").append("svg")
+    .attr("width", width + margin2.left + margin2.right)
+    .attr("height", height + margin2.top + 150)
+  .append("g")
+    .attr("transform", 
+          "translate(" + margin2.left + "," + margin2.top + ")");
+
+var jstates = "https://cibeh.github.io/class/FinalProject/us_density.csv";	  
+		  
+// get the data
+d3.csv(jstates, function(error, json) {
+// format the json
+  json.forEach(function(d) {
+    d.density = +d.density;
+  });
+
+  // Scale the range of the json in the domains
+  x.domain(json.map(function(d) { return d.name; }));
+  y.domain([0, d3.max(json, function(d) { return d.density; })]);
+
+  svg3.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+    .selectAll("text")
+      .attr("class", "label")
+      .attr("dx", "-.8em")
+      .attr("dy", "-.55em")
+      .attr("transform", "rotate(-90)" )
+      .attr("fill", "black")
+      .style("text-anchor", "end");
+
+ svg3.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("class", "label")
+      .attr("transform", "rotate(-90)")
+      .attr("y", +10)
+      .attr("fill", "black")
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("(Population per sq.mi)");
+
+  svg3.selectAll(".bar")
+      .data(json)
+    .enter().append("rect")
+	  .attr("class", "bar")
+      .style("fill", "#e67300")
+      .attr("x", function(d) { return x(d.name); })
+      .attr("width", x.bandwidth())
+      .attr("y", function(d) { return y(d.density); })
+      .attr("height", function(d) { return height - y(d.density); })
+	  .on("mouseover", function(d) {
+       div3.transition()
+         .duration(200)
+         .style("opacity", .9);
+       div3.html("State:"+" "+d.name + "<br/>" +"Pop Density:"+" "+ d.density)
+         .style("left", (d3.event.pageX) + "px")
+         .style("top", (d3.event.pageY - 28) + "px");
+       })
+     .on("mouseout", function(d) {
+       div3.transition()
+         .duration(500)
+         .style("opacity", 0);
+       });
+      
+});
+</script>
+</div>
+<footer> Chigo Ibeh <br> Advanced Visualization and Presentation </footer>
+</body>
