@@ -9,13 +9,6 @@ Data derived from: https://www.epa.gov/outdoor-air-quality-data/download-daily-d
 
 *Data has been summarized and filtered to match the specification of this presentation.*
 
-## API Referenced
-Basic D3 Library: "https://d3js.org/d3.v4.min.js".
-
-TopoJSON Library: "https://d3js.org/topojson.v2.min.js".
-
-Customized D3.Legend Library by *Susie Lu*: "https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.21.0/d3-legend.js".
-
 ## Demo
 
 HTML: https://cibeh.github.io/class/FinalProject/index.html
