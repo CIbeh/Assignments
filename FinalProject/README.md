@@ -16,11 +16,11 @@ TopoJSON Library: "https://d3js.org/topojson.v2.min.js".
 
 Customized D3.Legend Library by *Susie Lu*: "https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.21.0/d3-legend.js".
 
-##Demo
+## Demo
 
 HTML: https://cibeh.github.io/class/FinalProject/index.html
 
-##Code
+## Code
 
 File: https://github.com/cibeh/class/blob/master/FinalProject/index.html
 
