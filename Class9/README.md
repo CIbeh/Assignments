@@ -1,5 +1,5 @@
-## Zoomable Map with Raster and Vector Layers
-# Raster Layer: 
+# Zoomable Map with Raster and Vector Layers
+## Raster Layer: 
 Imagery Tile Basemap
-# Vector Layers: 
+## Vector Layers: 
 US States & Earthquakes Data
