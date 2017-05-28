@@ -4,6 +4,9 @@ Scatterplot of earthquake magnitudes across the US
 ## Demo
 https://cibeh.github.io/class/Class6
 
+## Gist
+https://gist.github.com/cibeh/24859fd58db1849c1205416cd6216fc3
+
 ## Note
 This scatterplot illustrates the magnitude of earthquakes relative to each of its corresponding depth.
 This data was collected within the past 7 days(Mar 4 2017 -Mar 11 2017) and represents earthquakes with magnitudes over 2.5.
