@@ -4,7 +4,7 @@ Scatterplot of earthquake magnitudes across the US
 ## Demo
 https://cibeh.github.io/class/Class6
 
-
+## Note
 This scatterplot illustrates the magnitude of earthquakes relative to each of its corresponding depth.
 This data was collected within the past 7 days(Mar 4 2017 -Mar 11 2017) and represents earthquakes with magnitudes over 2.5.
 The depth is representative of how far below the eath surface the earthquake begins to rupture. This depth may be relative to the WGS84 geoid, mean sea-level, 
