@@ -1,3 +1,3 @@
 # GES 778 Advanced Visualization and Presentation 
 ## Summary
-Contains homework assignments and class practical work for GES 778 Advanced Visualization and Presentation
+This repo contains homework assignments and class practical work for my GES 778: Advanced Visualization and Presentation class
