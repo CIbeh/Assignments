@@ -187,10 +187,10 @@ var layer11= svg.append("g");
 var layer12= svg.append("g"); 
   
 //Create States variable  
-var states = "https://cibeh.github.io/class/FinalProject/us_states_pop_density.json";
+var states = "https://cibeh.github.io/school/FinalProject/us_states_pop_density.json";
 
 //Create Pollution variable
-var pollutiongeo = "https://cibeh.github.io/class/FinalProject/pollution_geo_update.json";
+var pollutiongeo = "https://cibeh.github.io/school/FinalProject/pollution_geo_update.json";
 
 //Create Legend for CO Emission
 var ordinal = d3.scaleOrdinal()
@@ -479,7 +479,7 @@ var div2 = d3.select("#area2").append("div")
     .attr("class", "tooltip2")
     .style("opacity", 0);
 
-var csv = "https://cibeh.github.io/class/FinalProject/EPA_Data.csv";		  
+var csv = "https://cibeh.github.io/school/FinalProject/EPA_Data.csv";		  
 		  
 // get the data
 d3.csv(csv, function(error, data) {
@@ -580,7 +580,7 @@ var svg3 = d3.select("#area3").append("svg")
     .attr("transform", 
           "translate(" + margin2.left + "," + margin2.top + ")");
 
-var jstates = "https://cibeh.github.io/class/FinalProject/us_density.csv";	  
+var jstates = "https://cibeh.github.io/school/FinalProject/us_density.csv";	  
 		  
 // get the data
 d3.csv(jstates, function(error, json) {
