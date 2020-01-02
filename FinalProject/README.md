@@ -15,6 +15,6 @@ HTML: https://cibeh.github.io/school/FinalProject/index.html
 
 ## Code
 
-File: https://github.com/school/class/blob/master/FinalProject/index.html
+File: https://github.com/school/blob/master/FinalProject/index.html
 
 Gist: https://gist.github.com/cibeh/56eba6015bdb99a6d0618fc7274b6fdc
